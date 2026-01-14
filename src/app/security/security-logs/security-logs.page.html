@@ -1,0 +1,133 @@
+<app-header title="Visitor Logs"></app-header>
+
+<ion-content [scrollY]="true">
+  <div class="page-container">
+    <ion-segment [(ngModel)]="selectedSegment" class="segment-tabs">
+      <ion-segment-button value="today">
+        <ion-label>Today</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="all">
+        <ion-label>All</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <div class="filter-row">
+      <ion-item class="filter-item">
+        <ion-label>Date</ion-label>
+        <ion-select [(ngModel)]="filterDate" placeholder="All Dates">
+          <ion-select-option value="all">All Dates</ion-select-option>
+          <ion-select-option value="today">Today</ion-select-option>
+          <ion-select-option value="yesterday">Yesterday</ion-select-option>
+          <ion-select-option value="last7days">Last 7 Days</ion-select-option>
+          <ion-select-option value="last30days">Last 30 Days</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item class="filter-item">
+        <ion-label>Type</ion-label>
+        <ion-select [(ngModel)]="filterType" placeholder="All Types">
+          <ion-select-option value="all">All Types</ion-select-option>
+          <ion-select-option value="guest">Guest</ion-select-option>
+          <ion-select-option value="delivery">Delivery</ion-select-option>
+          <ion-select-option value="relative">Relative</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </div>
+
+    <div class="date-picker-row">
+      <ion-label>Pick Specific Date:</ion-label>
+      <ion-datetime-button datetime="customDate"></ion-datetime-button>
+    </div>
+
+    <ion-modal [keepContentsMounted]="true">
+      <ng-template>
+        <ion-datetime id="customDate" [(ngModel)]="selectedDate" presentation="date"></ion-datetime>
+      </ng-template>
+    </ion-modal>
+
+    <ion-card class="log-card">
+      <ion-card-content>
+        <div class="log-layout">
+          <div class="log-info">
+            <div class="visitor-name">Ravi Kumar</div>
+            <div class="visitor-phone">
+              <ion-icon name="call-outline"></ion-icon>
+              <span>9000000001</span>
+            </div>
+            <div class="visited-date">Jan 13, 2026</div>
+            <div class="log-meta">
+              <span class="purpose-badge guest">Guest</span>
+              <span class="plot-badge">Plot 10</span>
+            </div>
+            <div class="log-details">
+              <div class="detail-row">
+                <ion-icon name="log-in-outline"></ion-icon>
+                <span class="label">Check-in:</span>
+                <span>10:15 AM</span>
+              </div>
+              <div class="detail-row">
+                <ion-icon name="log-out-outline"></ion-icon>
+                <span class="label">Check-out:</span>
+                <span>2:30 PM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="log-card">
+      <ion-card-content>
+        <div class="log-info">
+          <div class="visitor-name">Amazon Delivery</div>
+          <div class="visitor-phone">
+            <ion-icon name="call-outline"></ion-icon>
+            <span>9000000002</span>
+          </div>
+          <div class="visited-date">Jan 13, 2026</div>
+          <div class="log-meta">
+            <span class="purpose-badge delivery">Delivery</span>
+            <span class="plot-badge">Plot 11</span>
+          </div>
+          <div class="log-details">
+            <div class="detail-row">
+              <ion-icon name="log-in-outline"></ion-icon>
+              <span class="label">Check-in:</span>
+              <span>2:00 PM</span>
+            </div>
+          </div>
+        </div>
+        <div class="log-action">
+          <ion-button fill="solid" size="small">Check Out</ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="log-card">
+      <ion-card-content>
+        <div class="log-info">
+          <div class="visitor-name">Priya Sharma</div>
+          <div class="visitor-phone">
+            <ion-icon name="call-outline"></ion-icon>
+            <span>9000000003</span>
+          </div>
+          <div class="visited-date">Jan 13, 2026</div>
+          <div class="log-meta">
+            <span class="purpose-badge relative">Relative</span>
+            <span class="plot-badge">Plot 15</span>
+          </div>
+          <div class="log-details">
+            <div class="detail-row">
+              <ion-icon name="log-in-outline"></ion-icon>
+              <span class="label">Check-in:</span>
+              <span>3:45 PM</span>
+            </div>
+          </div>
+        </div>
+        <div class="log-action">
+          <ion-button fill="solid" size="small">Check Out</ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

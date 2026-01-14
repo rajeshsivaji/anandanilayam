@@ -1,0 +1,20 @@
+<ion-content [fullscreen]="true">
+  <router-outlet></router-outlet>
+</ion-content>
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button routerLink="/non-staying-owner/property" routerLinkActive="tab-selected">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Property</ion-label>
+    </ion-tab-button>
+    <ion-tab-button routerLink="/non-staying-owner/tenant" routerLinkActive="tab-selected">
+      <ion-icon name="people-outline"></ion-icon>
+      <ion-label>Tenant</ion-label>
+    </ion-tab-button>
+    <ion-tab-button routerLink="/non-staying-owner/reports" routerLinkActive="tab-selected">
+      <ion-icon name="document-text-outline"></ion-icon>
+      <ion-label>Reports</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

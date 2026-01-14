@@ -1,0 +1,25 @@
+<ion-content class="login-content">
+  <div class="login-container">
+    <div class="logo-section">
+      <img src="assets/logo.png" alt="Ananda Nilaya" class="logo">
+      <h1>Welcome</h1>
+    </div>
+
+    <div class="form-section">
+      <div class="phone-input-container">
+        <span class="country-code">+91</span>
+        <ion-input 
+          [(ngModel)]="mobile" 
+          type="tel" 
+          maxlength="10" 
+          placeholder="Enter mobile number"
+          class="phone-input">
+        </ion-input>
+      </div>
+
+      <ion-button expand="block" (click)="sendOtp()" [disabled]="mobile.length !== 10 || isLoading" class="login-btn">
+        {{ isLoading ? 'Sending...' : 'Send OTP' }}
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

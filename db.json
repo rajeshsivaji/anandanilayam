@@ -1,0 +1,191 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin User",
+      "mobile": "9999999999",
+      "role": "ADMIN",
+      "roleName": "Administrator",
+      "plotNo": null,
+      "active": true
+    },
+    {
+      "id": 2,
+      "name": "Security Guard",
+      "mobile": "8888888888",
+      "role": "SECURITY",
+      "roleName": "Security Staff",
+      "plotNo": null,
+      "active": true
+    },
+    {
+      "id": 3,
+      "name": "Rajesh Kumar",
+      "mobile": "7777777777",
+      "role": "OWNER_STAYING",
+      "roleName": "Owner (Staying)",
+      "plotNo": "10",
+      "active": true
+    },
+    {
+      "id": 4,
+      "name": "Tenant Kumar",
+      "mobile": "6666666666",
+      "role": "TENANT",
+      "roleName": "Tenant",
+      "plotNo": "11",
+      "active": true
+    },
+    {
+      "id": 5,
+      "name": "Saidevi Reddy",
+      "mobile": "5555555555",
+      "role": "OWNER_NON_STAYING",
+      "roleName": "Owner (Non-Staying)",
+      "plotNo": "11",
+      "active": true
+    }
+  ],
+
+  "notices": [
+    {
+      "id": 101,
+      "title": "Water Supply Maintenance",
+      "content": "Water supply will be interrupted tomorrow from 10 AM to 1 PM due to pipeline maintenance.",
+      "publishedBy": "Admin",
+      "publishedAt": "2026-01-10T09:00:00.000Z",
+      "attachments": []
+    },
+    {
+      "id": 102,
+      "title": "Security Reminder",
+      "content": "Please ensure all visitors are pre-approved. Do not allow unknown visitors without confirmation.",
+      "publishedBy": "Admin",
+      "publishedAt": "2026-01-11T18:30:00.000Z",
+      "attachments": []
+    }
+  ],
+
+  "complaints": [
+    {
+      "id": 201,
+      "raisedByUserId": 3,
+      "raisedByRole": "OWNER_STAYING",
+      "plotNo": "10",
+      "category": "Street Light",
+      "description": "Street light near Plot 10 is not working for 2 days.",
+      "photoUrl": "",
+      "status": "OPEN",
+      "createdAt": "2026-01-11T08:15:00.000Z",
+      "updatedAt": "2026-01-11T08:15:00.000Z"
+    },
+    {
+      "id": 202,
+      "raisedByUserId": 4,
+      "raisedByRole": "TENANT",
+      "plotNo": "11",
+      "category": "Garbage",
+      "description": "Garbage is not collected regularly near Plot 11.",
+      "photoUrl": "",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-01-10T11:00:00.000Z",
+      "updatedAt": "2026-01-11T09:30:00.000Z"
+    }
+  ],
+
+  "maintenanceBills": [
+    {
+      "id": 301,
+      "plotNo": "10",
+      "month": "2026-01",
+      "sqft": 1200,
+      "ratePerSqft": 1.5,
+      "amount": 1800,
+      "dueDate": "2026-01-15",
+      "status": "UNPAID",
+      "generatedAt": "2026-01-01T08:00:00.000Z"
+    },
+    {
+      "id": 302,
+      "plotNo": "11",
+      "month": "2026-01",
+      "sqft": 1200,
+      "ratePerSqft": 1.5,
+      "amount": 1800,
+      "dueDate": "2026-01-15",
+      "status": "PAID",
+      "generatedAt": "2026-01-01T08:00:00.000Z"
+    },
+    {
+      "id": 303,
+      "plotNo": "10",
+      "month": "2025-12",
+      "sqft": 1200,
+      "ratePerSqft": 1.5,
+      "amount": 1800,
+      "dueDate": "2025-12-15",
+      "status": "PAID",
+      "generatedAt": "2025-12-01T08:00:00.000Z"
+    }
+  ],
+
+  "payments": [
+    {
+      "id": 401,
+      "billId": 302,
+      "plotNo": "11",
+      "month": "2026-01",
+      "amount": 1800,
+      "paymentMode": "ONLINE",
+      "paymentStatus": "SUCCESS",
+      "transactionId": "TXN-AN-20260111-0001",
+      "paidAt": "2026-01-11T12:10:00.000Z",
+      "receiptNo": "AN-REC-0001"
+    },
+    {
+      "id": 402,
+      "billId": 303,
+      "plotNo": "10",
+      "month": "2025-12",
+      "amount": 1800,
+      "paymentMode": "CASH",
+      "paymentStatus": "SUCCESS",
+      "transactionId": "CASH-20251215-001",
+      "paidAt": "2025-12-15T10:00:00.000Z",
+      "receiptNo": "AN-REC-0002"
+    }
+  ],
+
+  "visitors": [
+    {
+      "id": 501,
+      "type": "EXPECTED",
+      "createdByUserId": 3,
+      "createdByRole": "OWNER_STAYING",
+      "plotNo": "10",
+      "visitorName": "Ravi",
+      "visitorMobile": "9000000001",
+      "purpose": "Guest",
+      "visitDate": "2026-01-13",
+      "status": "EXPECTED",
+      "createdAt": "2026-01-12T18:00:00.000Z",
+      "entryTime": null,
+      "exitTime": null
+    },
+    {
+      "id": 502,
+      "type": "WALK_IN",
+      "createdByUserId": 2,
+      "createdByRole": "SECURITY",
+      "plotNo": "11",
+      "visitorName": "Amazon Delivery",
+      "visitorMobile": "9000000002",
+      "purpose": "Delivery",
+      "visitDate": "2026-01-13",
+      "status": "IN",
+      "createdAt": "2026-01-13T09:10:00.000Z",
+      "entryTime": "2026-01-13T09:12:00.000Z",
+      "exitTime": null
+    }
+  ]
+}

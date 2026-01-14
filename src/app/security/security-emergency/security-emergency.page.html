@@ -1,0 +1,52 @@
+<app-header title="Emergency"></app-header>
+
+<ion-content>
+  <div class="page-container">
+    <ion-button expand="block" color="danger" class="alert-button" (click)="triggerAlert()">
+      <ion-icon slot="start" name="warning-outline"></ion-icon>
+      Trigger Alert
+    </ion-button>
+
+    <h3 class="section-title">Emergency Contacts</h3>
+
+    <ion-card class="contact-card">
+      <ion-card-content>
+        <div class="contact-layout">
+          <div class="contact-avatar">
+            <ion-icon name="person-circle-outline"></ion-icon>
+          </div>
+          <div class="contact-info">
+            <div class="contact-name">Rajesh Kumar</div>
+            <div class="contact-role">Manager</div>
+            <div class="contact-mobile">+91 9876543210</div>
+          </div>
+          <div class="contact-action">
+            <ion-button fill="solid" shape="round" (click)="makeCall('9876543210')">
+              <ion-icon name="call-outline"></ion-icon>
+            </ion-button>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="contact-card">
+      <ion-card-content>
+        <div class="contact-layout">
+          <div class="contact-avatar">
+            <ion-icon name="person-circle-outline"></ion-icon>
+          </div>
+          <div class="contact-info">
+            <div class="contact-name">Dr. Priya Sharma</div>
+            <div class="contact-role">Medical Support</div>
+            <div class="contact-mobile">+91 9876543211</div>
+          </div>
+          <div class="contact-action">
+            <ion-button fill="solid" shape="round" (click)="makeCall('9876543211')">
+              <ion-icon name="call-outline"></ion-icon>
+            </ion-button>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

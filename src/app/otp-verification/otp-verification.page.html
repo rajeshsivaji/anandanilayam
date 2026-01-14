@@ -1,0 +1,38 @@
+<ion-content class="otp-content">
+  <div class="otp-container">
+    <div class="logo-section">
+      <img src="assets/logo.png" alt="Ananda Nilaya" class="logo">
+      <h1>Verify OTP</h1>
+      <p>Enter the 6-digit code sent to +91 {{ mobile }}</p>
+      <div class="change-container">
+        <span class="change-link" (click)="changeNumber()">Change</span>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <!-- Visual OTP boxes -->
+      <div class="otp-display">
+        <div 
+          *ngFor="let digit of otpArray; let i = index" 
+          class="otp-digit-box"
+          [class.filled]="digit.trim() !== ''">
+          {{ digit.trim() }}
+        </div>
+      </div>
+
+      <!-- Hidden input field -->
+      <ion-input 
+        [(ngModel)]="otp"
+        type="number"
+        maxlength="6"
+        (ionInput)="onOtpInput($event)"
+        class="hidden-input"
+        placeholder="">
+      </ion-input>
+
+      <ion-button expand="block" (click)="verifyOtp()" [disabled]="!isOtpComplete || isLoading" class="verify-btn">
+        {{ isLoading ? 'Verifying...' : 'Verify OTP' }}
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

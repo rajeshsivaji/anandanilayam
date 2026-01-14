@@ -1,0 +1,83 @@
+.page-container {
+  padding: 16px;
+  padding-bottom: 80px;
+}
+
+.walkin-button {
+  margin-bottom: 16px;
+}
+
+.visitor-card {
+  background: #ffffff;
+  margin-bottom: 16px;
+}
+
+.visitor-info {
+  margin-bottom: 12px;
+}
+
+.visitor-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.visitor-meta {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.plot-badge {
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.purpose-badge {
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  
+  &.guest {
+    background: #f3e5f5;
+    color: #7b1fa2;
+  }
+  
+  &.delivery {
+    background: #fff3e0;
+    color: #f57c00;
+  }
+}
+
+.visitor-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #666;
+  
+  ion-icon {
+    font-size: 16px;
+    color: var(--ion-color-primary);
+  }
+}
+
+.visitor-action {
+  ion-button {
+    --height: 36px;
+    font-size: 13px;
+    width: 100%;
+  }
+}

@@ -1,0 +1,28 @@
+.profile-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  margin: 20px auto;
+}
+
+.avatar-icon {
+  font-size: 120px;
+  color: var(--ion-color-primary);
+}
+
+ion-card {
+  margin: 20px 0;
+}
+
+ion-item {
+  --padding-start: 0;
+  margin: 10px 0;
+}
+
+ion-button {
+  margin-top: 20px;
+}

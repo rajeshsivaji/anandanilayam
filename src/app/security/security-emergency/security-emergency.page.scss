@@ -1,0 +1,68 @@
+.page-container {
+  padding: 16px;
+  padding-bottom: 80px;
+}
+
+.alert-button {
+  margin-bottom: 24px;
+  --background: #d32f2f;
+  font-weight: 600;
+  font-size: 16px;
+  height: 50px;
+}
+
+.section-title {
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+}
+
+.contact-card {
+  background: #ffffff;
+  margin-bottom: 16px;
+}
+
+.contact-layout {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.contact-avatar {
+  ion-icon {
+    font-size: 56px;
+    color: #ccc;
+  }
+}
+
+.contact-info {
+  flex: 1;
+}
+
+.contact-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.contact-role {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.contact-mobile {
+  font-size: 13px;
+  color: #999;
+}
+
+.contact-action {
+  ion-button {
+    --padding-start: 12px;
+    --padding-end: 12px;
+    width: 48px;
+    height: 48px;
+  }
+}

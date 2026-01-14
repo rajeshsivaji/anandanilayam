@@ -1,0 +1,37 @@
+<app-header title="Walk-in Entry"></app-header>
+
+<ion-content>
+  <div class="form-container">
+    <h3 class="form-title">Enter Visitor Details</h3>
+    
+    <ion-item>
+      <ion-label position="stacked">Visitor Mobile Number</ion-label>
+      <ion-input type="tel" placeholder="Enter mobile number" [(ngModel)]="visitorMobile">
+        <div slot="start">+91</div>
+      </ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="stacked">Visitor Name</ion-label>
+      <ion-input type="text" placeholder="Enter visitor name" [(ngModel)]="visitorName"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="stacked">Visiting Flat Number</ion-label>
+      <ion-input type="text" placeholder="Enter flat number" [(ngModel)]="flatNumber"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="stacked">Purpose of Visit</ion-label>
+      <ion-select placeholder="Select purpose" [(ngModel)]="purpose">
+        <ion-select-option value="guest">Guest</ion-select-option>
+        <ion-select-option value="maintenance">Maintenance</ion-select-option>
+        <ion-select-option value="friend">Friend</ion-select-option>
+        <ion-select-option value="delivery">Delivery</ion-select-option>
+        <ion-select-option value="other">Other</ion-select-option>
+      </ion-select>
+    </ion-item>
+    
+    <ion-button expand="block" (click)="submitEntry()">Submit</ion-button>
+  </div>
+</ion-content>

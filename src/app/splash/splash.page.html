@@ -1,0 +1,23 @@
+<ion-content class="splash-content">
+  <div class="splash-container">
+    <div class="logo-container">
+      <img src="assets/logo.png" alt="Ananda Nilaya" class="logo">
+    </div>
+    
+    <div class="content-container" *ngIf="screens[currentScreen]">
+      <h1 class="title">{{ screens[currentScreen].title }}</h1>
+      <h2 class="subtitle">{{ screens[currentScreen].subtitle }}</h2>
+      <p class="description">{{ screens[currentScreen].description }}</p>
+    </div>
+    
+    <div class="dots-container">
+      <span 
+        *ngFor="let screen of screens; let i = index" 
+        class="dot" 
+        [class.active]="i === currentScreen">
+      </span>
+    </div>
+    
+    <button class="skip-button" (click)="skipSplash()">Skip</button>
+  </div>
+</ion-content>

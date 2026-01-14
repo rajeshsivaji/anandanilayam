@@ -1,0 +1,149 @@
+.page-container {
+  padding: 16px;
+  padding-bottom: 80px;
+}
+
+.segment-tabs {
+  margin-bottom: 16px;
+}
+
+.filter-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.filter-item {
+  flex: 1;
+  --padding-start: 0;
+  --inner-padding-end: 0;
+}
+
+.date-picker-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 0 4px;
+  
+  ion-label {
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+  }
+}
+
+.log-card {
+  background: #ffffff;
+  margin-bottom: 16px;
+}
+
+.log-layout {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.log-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.visitor-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.visitor-phone {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 4px;
+  
+  ion-icon {
+    font-size: 16px;
+    color: var(--ion-color-primary);
+  }
+}
+
+.visited-date {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.log-meta {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.purpose-badge {
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  
+  &.guest {
+    background: #f3e5f5;
+    color: #7b1fa2;
+  }
+  
+  &.delivery {
+    background: #fff3e0;
+    color: #f57c00;
+  }
+  
+  &.relative {
+    background: #e8f5e9;
+    color: #388e3c;
+  }
+}
+
+.plot-badge {
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.log-details {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.detail-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #666;
+  
+  ion-icon {
+    font-size: 16px;
+    color: var(--ion-color-primary);
+  }
+  
+  .label {
+    font-weight: 500;
+    color: #999;
+    margin-right: 4px;
+  }
+}
+
+.log-action {
+  margin-top: 12px;
+  
+  ion-button {
+    --height: 36px;
+    font-size: 13px;
+    width: 100%;
+  }
+}

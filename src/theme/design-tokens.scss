@@ -1,0 +1,182 @@
+/* =========================================================
+   ANANDA NILAYA – DESIGN TOKENS
+   Purpose: Ensure visual & UX consistency across the app
+   Platform: Ionic + Angular (Standalone)
+   ========================================================= */
+
+:root {
+
+  /* =======================================================
+     1. BRAND COLORS
+     ======================================================= */
+
+  /* Primary brand color – CTAs, active states */
+  --color-primary: #5A7863;
+
+  /* Primary variants */
+  --color-primary-dark: #466452;
+  --color-primary-light: #7A9A85;
+
+  /* Secondary brand color – backgrounds, highlights */
+  --color-secondary: #EBF4DD;
+  --color-secondary-dark: #DCEAC6;
+  --color-secondary-light: #F5FAEC;
+
+  /* =======================================================
+     2. BACKGROUND & SURFACE COLORS
+     ======================================================= */
+
+  /* App background */
+  --color-background: #F7F9F4;
+
+  /* Card / sheet / modal background */
+  --color-surface: #FFFFFF;
+
+  /* Muted surface (lists, disabled blocks) */
+  --color-surface-muted: #F1F4EF;
+
+  /* =======================================================
+     3. TEXT COLORS
+     ======================================================= */
+
+  /* Titles, headings */
+  --color-text-title: #1F2D26;
+
+  /* Main body text */
+  --color-text-primary: #2E3D35;
+
+  /* Labels, subtitles, helper text */
+  --color-text-secondary: #6E7F75;
+
+  /* Placeholder, disabled text */
+  --color-text-placeholder: #9AA8A0;
+
+  /* Text on dark backgrounds */
+  --color-text-inverse: #FFFFFF;
+
+  /* =======================================================
+     4. STATUS COLORS
+     ======================================================= */
+
+  /* Success (payment success, allowed entry) */
+  --color-success: #2E7D32;
+
+  /* Warning (pending, expected visitor) */
+  --color-warning: #F9A825;
+
+  /* Error (OTP wrong, payment failed, denied) */
+  --color-error: #C62828;
+
+  /* Informational messages */
+  --color-info: #4A7C9C;
+
+  /* =======================================================
+     5. TYPOGRAPHY
+     ======================================================= */
+
+  /* Base font family */
+  --font-family-base: 'Inter', 'Roboto', system-ui, sans-serif;
+
+  /* Font sizes */
+  --font-size-h1: 24px;      /* Page titles */
+  --font-size-h2: 20px;      /* Section titles */
+  --font-size-h3: 18px;      /* Card titles */
+
+  --font-size-body: 14px;    /* Main content */
+  --font-size-small: 12px;   /* Labels */
+  --font-size-caption: 11px; /* Hints */
+
+  /* Font weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+
+  /* =======================================================
+     6. SPACING SYSTEM (PADDING & MARGINS)
+     ======================================================= */
+
+  /* Use ONLY these spacing values */
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 20px;
+  --space-xl: 24px;
+  --space-xxl: 32px;
+
+  /* Usage guidance:
+     - Screen padding: --space-md
+     - Card padding: --space-md
+     - Section spacing: --space-lg
+     - Button padding: 12px 16px
+  */
+
+  /* =======================================================
+     7. BORDERS & RADIUS
+     ======================================================= */
+
+  /* Border colors */
+  --border-color-default: #D6DED9;
+  --border-color-focus: var(--color-primary);
+  --border-color-error: var(--color-error);
+
+  /* Border radius scale */
+  --radius-xs: 4px;   /* Chips, tags */
+  --radius-sm: 8px;   /* Inputs */
+  --radius-md: 12px;  /* Cards, buttons */
+  --radius-lg: 16px;  /* Bottom sheets, modals */
+
+  /* =======================================================
+     8. SHADOWS (NO BLACK FRAMES)
+     ======================================================= */
+
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.06);   /* Cards */
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);  /* Floating buttons */
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.10);  /* Modals */
+
+  /* =======================================================
+     9. BUTTON TOKENS
+     ======================================================= */
+
+  /* Primary button */
+  --btn-primary-bg: var(--color-primary);
+  --btn-primary-text: #FFFFFF;
+  --btn-primary-disabled-bg: #A9B5AE;
+
+  /* Secondary (outline) button */
+  --btn-secondary-border: var(--color-primary);
+  --btn-secondary-text: var(--color-primary);
+  --btn-secondary-bg: transparent;
+
+  /* =======================================================
+     10. INPUT FIELDS
+     ======================================================= */
+
+  --input-bg: #FFFFFF;
+  --input-text: var(--color-text-primary);
+  --input-border: var(--border-color-default);
+  --input-border-focus: var(--color-primary);
+  --input-border-error: var(--color-error);
+
+  /* =======================================================
+     11. BOTTOM TAB BAR
+     ======================================================= */
+
+  --tab-bg: #FFFFFF;
+  --tab-active: var(--color-primary);
+  --tab-inactive: #9AA6A0;
+  --tab-border: #E3EAE5;
+
+  /* =======================================================
+     12. IONIC COLOR MAPPING
+     ======================================================= */
+
+  --ion-color-primary: var(--color-primary);
+  --ion-color-primary-rgb: 90, 120, 99;
+  --ion-color-primary-contrast: #FFFFFF;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: var(--color-primary-dark);
+  --ion-color-primary-tint: var(--color-primary-light);
+  --ion-background-color: var(--color-background);
+  --ion-text-color: var(--color-text-primary);
+}
