@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonContent, IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/angular/standalone';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { addIcons } from 'ionicons';
-import { homeOutline, peopleOutline, businessOutline } from 'ionicons/icons';
+import { homeOutline, peopleOutline, businessOutline, personOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-staying-owner',
@@ -13,6 +13,6 @@ import { homeOutline, peopleOutline, businessOutline } from 'ionicons/icons';
 })
 export class StayingOwnerPage {
   constructor() {
-    addIcons({ homeOutline, peopleOutline, businessOutline });
+    addIcons({ homeOutline, peopleOutline, businessOutline, personOutline });
   }
 }

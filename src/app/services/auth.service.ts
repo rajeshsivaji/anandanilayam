@@ -23,34 +23,21 @@ export class AuthService {
   }
 
   async verifyOtp(otp: string): Promise<UserRole | null> {
-    if (otp.length === 6) {
+    if (otp === '123456') {
       const mobile = this.currentMobile || localStorage.getItem('loginMobile') || '';
       
-      try {
-        const response = await fetch(`http://localhost:3000/users?mobile=${mobile}`);
-        const users = await response.json();
-        
-        if (users.length > 0) {
-          const user = users[0];
-          const roleMap: { [key: string]: 'admin' | 'security' | 'tenant' | 'staying_owner' | 'not_staying_owner' } = {
-            'ADMIN': 'admin',
-            'SECURITY': 'security',
-            'TENANT': 'tenant',
-            'OWNER_STAYING': 'staying_owner',
-            'OWNER_NON_STAYING': 'not_staying_owner'
-          };
-          
-          localStorage.removeItem('loginMobile');
-          return {
-            mobile: user.mobile,
-            role: roleMap[user.role] || 'admin',
-            name: user.name,
-            flatNumber: user.plotNo
-          };
-        }
-      } catch (error) {
-        console.error('Error fetching user:', error);
-        console.log('Make sure JSON server is running: npm run json-server');
+      // Mock users for offline testing
+      const mockUsers: { [key: string]: UserRole } = {
+        '9999999999': { mobile, role: 'admin', name: 'Admin User' },
+        '8888888888': { mobile, role: 'security', name: 'Security Guard' },
+        '7777777777': { mobile, role: 'staying_owner', name: 'Rajesh Kumar', flatNumber: '10' },
+        '6666666666': { mobile, role: 'tenant', name: 'Tenant Kumar', flatNumber: '11' },
+        '5555555555': { mobile, role: 'not_staying_owner', name: 'Saidevi Reddy', flatNumber: '11' }
+      };
+      
+      if (mockUsers[mobile]) {
+        localStorage.removeItem('loginMobile');
+        return mockUsers[mobile];
       }
     }
     return null;

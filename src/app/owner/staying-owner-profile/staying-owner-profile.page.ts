@@ -7,16 +7,16 @@ import { addIcons } from 'ionicons';
 import { callOutline, calendarOutline, logOutOutline, personCircleOutline, homeOutline } from 'ionicons/icons';
 
 @Component({
-  selector: 'app-tenant-profile',
-  templateUrl: './tenant-profile.page.html',
-  styleUrls: ['./tenant-profile.page.scss'],
+  selector: 'app-staying-owner-profile',
+  templateUrl: './staying-owner-profile.page.html',
+  styleUrls: ['./staying-owner-profile.page.scss'],
   standalone: true,
   imports: [IonContent, IonHeader, IonTitle, IonToolbar, IonAvatar, IonCard, IonCardContent, IonItem, IonLabel, IonIcon, IonButton, CommonModule, FormsModule]
 })
-export class TenantProfilePage implements OnInit {
-  phoneNumber = '+91 6666666666';
+export class StayingOwnerProfilePage implements OnInit {
+  phoneNumber = '+91 7777777777';
   memberSince = 'January 2024';
-  flatNumber = 'A-101';
+  propertyNumber = 'B-202';
 
   constructor(private router: Router) {
     addIcons({ callOutline, calendarOutline, logOutOutline, personCircleOutline, homeOutline });

@@ -122,6 +122,10 @@ export const routes: Routes = [
       {
         path: 'management',
         loadComponent: () => import('./owner/staying-owner-management/staying-owner-management.page').then(m => m.StayingOwnerManagementPage)
+      },
+      {
+        path: 'profile',
+        loadComponent: () => import('./owner/staying-owner-profile/staying-owner-profile.page').then(m => m.StayingOwnerProfilePage)
       }
     ]
   },
@@ -145,6 +149,10 @@ export const routes: Routes = [
       {
         path: 'reports',
         loadComponent: () => import('./owner/non-staying-owner-reports/non-staying-owner-reports.page').then(m => m.NonStayingOwnerReportsPage)
+      },
+      {
+        path: 'profile',
+        loadComponent: () => import('./owner/non-staying-owner-profile/non-staying-owner-profile.page').then(m => m.NonStayingOwnerProfilePage)
       }
     ]
   },
