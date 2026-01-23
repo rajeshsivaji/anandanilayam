@@ -1,0 +1,120 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Guard List</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="addGuard()">
+        <ion-icon name="add-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="filterGuards()" placeholder="Search guards..."></ion-searchbar>
+    
+    <div class="list">
+      <ion-card *ngFor="let guard of displayedGuards; let i = index" class="guard-card">
+        <ion-card-content>
+          <div class="guard-header">
+            <div class="guard-info">
+              <div class="guard-detail">
+                <ion-icon name="shield-outline" class="detail-icon"></ion-icon>
+                <div class="detail-value">{{guard.name}}</div>
+              </div>
+              
+              <div class="guard-detail">
+                <ion-icon name="call-outline" class="detail-icon"></ion-icon>
+                <div class="detail-value">{{guard.phone}}</div>
+              </div>
+              
+              <div class="guard-detail">
+                <ion-icon name="mail-outline" class="detail-icon"></ion-icon>
+                <div class="detail-value">{{guard.email}}</div>
+              </div>
+              
+              <div class="guard-detail">
+                <ion-icon name="time-outline" class="detail-icon"></ion-icon>
+                <div class="detail-value">{{guard.shift}}</div>
+              </div>
+              
+              <div class="guard-detail">
+                <ion-icon name="location-outline" class="detail-icon"></ion-icon>
+                <div class="detail-value">{{guard.gate}}</div>
+              </div>
+            </div>
+            <div class="guard-actions">
+              <ion-button fill="clear" size="small" (click)="editGuard(i)">
+                <ion-icon name="create-outline"></ion-icon>
+              </ion-button>
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+    
+    <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+      <ion-infinite-scroll-content loadingText="Loading more guards..."></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+  
+  <ion-modal [isOpen]="isModalOpen" (didDismiss)="closeModal()">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>{{isEditMode ? 'Edit' : 'Add'}} Guard</ion-title>
+          <ion-buttons slot="end">
+            <ion-button fill="clear" (click)="closeModal()">
+              <ion-icon name="close-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      
+      <ion-content>
+        <div class="form-container">
+          <ion-item>
+            <ion-label position="stacked">Name</ion-label>
+            <ion-input [(ngModel)]="guardForm.name" placeholder="Enter guard name"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label position="stacked">Mobile</ion-label>
+            <ion-input [(ngModel)]="guardForm.phone" placeholder="Enter mobile number"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label position="stacked">Email</ion-label>
+            <ion-input [(ngModel)]="guardForm.email" placeholder="Enter email address"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label position="stacked">Shift</ion-label>
+            <ion-select [(ngModel)]="guardForm.shift" placeholder="Select shift">
+              <ion-select-option value="Day Shift (6 AM - 6 PM)">Day Shift (6 AM - 6 PM)</ion-select-option>
+              <ion-select-option value="Night Shift (6 PM - 6 AM)">Night Shift (6 PM - 6 AM)</ion-select-option>
+            </ion-select>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label position="stacked">Gate</ion-label>
+            <ion-select [(ngModel)]="guardForm.gate" placeholder="Select gate">
+              <ion-select-option value="Main Gate">Main Gate</ion-select-option>
+              <ion-select-option value="Side Gate">Side Gate</ion-select-option>
+              <ion-select-option value="Back Gate">Back Gate</ion-select-option>
+            </ion-select>
+          </ion-item>
+          
+          <div class="form-buttons">
+            <ion-button expand="block" (click)="saveGuard()">{{isEditMode ? 'Update' : 'Add'}} Guard</ion-button>
+          </div>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>

@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Offline Payment Entry</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <ion-item>
+      <ion-label position="stacked">Plot Number</ion-label>
+      <ion-input [(ngModel)]="plotNo" placeholder="Enter plot number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Amount (₹)</ion-label>
+      <ion-input type="number" [(ngModel)]="amount" placeholder="Enter amount"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Payment Mode</ion-label>
+      <ion-select [(ngModel)]="paymentMode" placeholder="Select mode">
+        <ion-select-option value="cash">Cash</ion-select-option>
+        <ion-select-option value="bank">Bank</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-checkbox [(ngModel)]="markAsPaid" slot="start"></ion-checkbox>
+      <ion-label>Mark as Paid</ion-label>
+    </ion-item>
+
+    <ion-button expand="block" color="primary" (click)="submitPayment()">
+      <ion-icon name="save-outline" slot="start"></ion-icon>
+      Submit Payment
+    </ion-button>
+  </div>
+</ion-content>

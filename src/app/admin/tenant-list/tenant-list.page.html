@@ -1,0 +1,103 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Tenant List</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="addTenant()">
+        <ion-icon name="add-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="filterTenants()" placeholder="Search tenants..."></ion-searchbar>
+    
+    <div class="list">
+      <ion-card *ngFor="let tenant of displayedTenants; let i = index" class="tenant-card">
+        <ion-card-content>
+          <div class="tenant-header">
+            <div class="tenant-info">
+              <div class="tenant-detail">
+                <ion-icon name="person-outline" class="detail-icon"></ion-icon>
+                <div class="detail-value">{{tenant.name}}</div>
+              </div>
+              
+              <div class="tenant-detail">
+                <ion-icon name="call-outline" class="detail-icon"></ion-icon>
+                <div class="detail-value">{{tenant.phone}}</div>
+              </div>
+              
+              <div class="tenant-detail">
+                <ion-icon name="mail-outline" class="detail-icon"></ion-icon>
+                <div class="detail-value">{{tenant.email}}</div>
+              </div>
+              
+              <div class="tenant-detail">
+                <ion-icon name="home-outline" class="detail-icon"></ion-icon>
+                <div class="detail-value">{{tenant.plotNo}}</div>
+              </div>
+            </div>
+            <div class="tenant-actions">
+              <ion-button fill="clear" size="small" (click)="editTenant(i)">
+                <ion-icon name="create-outline"></ion-icon>
+              </ion-button>
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+    
+    <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+      <ion-infinite-scroll-content loadingText="Loading more tenants..."></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+  
+  <ion-modal [isOpen]="isModalOpen" (didDismiss)="closeModal()">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>{{isEditMode ? 'Edit' : 'Add'}} Tenant</ion-title>
+          <ion-buttons slot="end">
+            <ion-button fill="clear" (click)="closeModal()">
+              <ion-icon name="close-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      
+      <ion-content>
+        <div class="form-container">
+          <ion-item>
+            <ion-label position="stacked">Name</ion-label>
+            <ion-input [(ngModel)]="tenantForm.name" placeholder="Enter tenant name"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label position="stacked">Phone</ion-label>
+            <ion-input [(ngModel)]="tenantForm.phone" placeholder="Enter phone number"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label position="stacked">Email</ion-label>
+            <ion-input [(ngModel)]="tenantForm.email" placeholder="Enter email address"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label position="stacked">Plot Number</ion-label>
+            <ion-input [(ngModel)]="tenantForm.plotNo" placeholder="Enter plot number"></ion-input>
+          </ion-item>
+          
+          <div class="form-buttons">
+            <ion-button expand="block" (click)="saveTenant()">{{isEditMode ? 'Update' : 'Add'}} Tenant</ion-button>
+          </div>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>

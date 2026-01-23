@@ -1,13 +1,83 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>admin-dashboard</ion-title>
+    <ion-title>Dashboard</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">admin-dashboard</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="dashboard-container">
+    <ion-card class="summary-card">
+      <ion-card-content>
+        <h3>Overview</h3>
+        
+        <div class="stat-item">
+          <ion-icon name="home-outline" class="stat-icon"></ion-icon>
+          <div class="stat-text">Total Plots</div>
+          <div class="stat-count">{{totalPlots}}</div>
+        </div>
+        
+        <div class="stat-item">
+          <ion-icon name="checkmark-circle-outline" class="stat-icon"></ion-icon>
+          <div class="stat-text">Paid</div>
+          <div class="stat-count paid">{{paidCount}}</div>
+        </div>
+        
+        <div class="stat-item">
+          <ion-icon name="close-circle-outline" class="stat-icon"></ion-icon>
+          <div class="stat-text">Unpaid</div>
+          <div class="stat-count unpaid">{{unpaidCount}}</div>
+        </div>
+        
+        <div class="stat-item">
+          <ion-icon name="alert-circle-outline" class="stat-icon"></ion-icon>
+          <div class="stat-text">Open Complaints</div>
+          <div class="stat-count">{{openComplaints}}</div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <div class="action-cards">
+      <ion-card class="action-card" button (click)="goToPaymentTracking()">
+        <ion-card-content>
+          <ion-icon name="card-outline" class="action-icon"></ion-icon>
+          <div class="action-text">Payment Tracking</div>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card class="action-card" button (click)="goToOfflinePayment()">
+        <ion-card-content>
+          <ion-icon name="cash-outline" class="action-icon"></ion-icon>
+          <div class="action-text">Offline Payment</div>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card class="action-card" button (click)="goToPlotList()">
+        <ion-card-content>
+          <ion-icon name="list-outline" class="action-icon"></ion-icon>
+          <div class="action-text">Plot List</div>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card class="action-card" button (click)="goToOwnerList()">
+        <ion-card-content>
+          <ion-icon name="people-outline" class="action-icon"></ion-icon>
+          <div class="action-text">Owner List</div>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card class="action-card" button (click)="goToGuardList()">
+        <ion-card-content>
+          <ion-icon name="shield-outline" class="action-icon"></ion-icon>
+          <div class="action-text">Guard List</div>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card class="action-card" button (click)="goToTenantList()">
+        <ion-card-content>
+          <ion-icon name="business-outline" class="action-icon"></ion-icon>
+          <div class="action-text">Tenant List</div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
 </ion-content>

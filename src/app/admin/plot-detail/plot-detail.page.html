@@ -1,0 +1,78 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Plot Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <div class="plot-number">
+      <h1>{{plotNo}}</h1>
+    </div>
+
+    <ion-card class="info-card">
+      <ion-card-content>
+        <h3>Owner Information</h3>
+        
+        <div class="detail-item">
+          <ion-icon name="person-outline" class="detail-icon"></ion-icon>
+          <div class="detail-content">
+            <div class="detail-label">Name</div>
+            <div class="detail-value">{{ownerInfo.name}}</div>
+          </div>
+        </div>
+        
+        <div class="detail-item">
+          <ion-icon name="call-outline" class="detail-icon"></ion-icon>
+          <div class="detail-content">
+            <div class="detail-label">Phone</div>
+            <div class="detail-value">{{ownerInfo.phone}}</div>
+          </div>
+        </div>
+        
+        <div class="detail-item">
+          <ion-icon name="mail-outline" class="detail-icon"></ion-icon>
+          <div class="detail-content">
+            <div class="detail-label">Email</div>
+            <div class="detail-value">{{ownerInfo.email}}</div>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="info-card">
+      <ion-card-content>
+        <h3>Tenant Information</h3>
+        
+        <div class="detail-item">
+          <ion-icon name="person-outline" class="detail-icon"></ion-icon>
+          <div class="detail-content">
+            <div class="detail-label">Name</div>
+            <div class="detail-value">{{tenantInfo.name}}</div>
+          </div>
+        </div>
+        
+        <div class="detail-item">
+          <ion-icon name="call-outline" class="detail-icon"></ion-icon>
+          <div class="detail-content">
+            <div class="detail-label">Phone</div>
+            <div class="detail-value">{{tenantInfo.phone}}</div>
+          </div>
+        </div>
+        
+        <div class="detail-item">
+          <ion-icon name="mail-outline" class="detail-icon"></ion-icon>
+          <div class="detail-content">
+            <div class="detail-label">Email</div>
+            <div class="detail-value">{{tenantInfo.email}}</div>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

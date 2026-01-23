@@ -1,0 +1,63 @@
+.container {
+  padding: 16px;
+}
+
+.stats-cards {
+  display: flex;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.stat-card {
+  flex: 1;
+  margin: 0;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 20px;
+  
+  &.paid .stat-number {
+    color: var(--ion-color-success);
+  }
+  
+  &.unpaid .stat-number {
+    color: var(--ion-color-danger);
+  }
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+ion-segment {
+  margin: 16px 0;
+}
+
+.list {
+  margin-top: 16px;
+}
+
+ion-item {
+  --padding-start: 16px;
+  --padding-end: 16px;
+  margin-bottom: 1px;
+}
+
+ion-item h3 {
+  margin: 0;
+  font-weight: 600;
+  color: #333;
+}
+
+ion-item p {
+  margin: 2px 0 0 0;
+  color: #666;
+  font-size: 0.9rem;
+}

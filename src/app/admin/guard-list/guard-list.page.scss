@@ -1,0 +1,58 @@
+.container {
+  padding: 16px;
+}
+
+.guard-card {
+  margin-bottom: 8px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  background: #ffffff;
+}
+
+.guard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.guard-info {
+  flex: 1;
+}
+
+.guard-detail {
+  display: flex;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.guard-detail:last-of-type {
+  border-bottom: none;
+}
+
+.guard-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.detail-icon {
+  color: var(--ion-color-primary);
+  font-size: 16px;
+  margin-right: 12px;
+  min-width: 16px;
+}
+
+.detail-value {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+  flex: 1;
+}
+
+.form-container {
+  padding: 16px;
+}
+
+.form-buttons {
+  margin-top: 24px;
+}

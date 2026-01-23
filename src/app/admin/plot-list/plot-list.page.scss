@@ -1,0 +1,53 @@
+.container {
+  padding: 16px;
+}
+
+.plot-card {
+  margin-bottom: 12px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background: #ffffff;
+}
+
+.plot-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plot-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.plot-info {
+  flex: 1;
+  cursor: pointer;
+}
+
+.plot-info h3 {
+  margin: 0;
+  font-weight: 600;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.plot-info p {
+  margin: 4px 0 0 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.arrow-icon {
+  color: #999;
+  font-size: 1.2rem;
+}
+
+.form-container {
+  padding: 16px;
+}
+
+.form-buttons {
+  margin-top: 24px;
+}

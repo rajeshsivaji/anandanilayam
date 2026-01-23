@@ -89,12 +89,48 @@ export const routes: Routes = [
         loadComponent: () => import('./admin/admin-dashboard/admin-dashboard.page').then(m => m.AdminDashboardPage)
       },
       {
-        path: 'users',
-        loadComponent: () => import('./admin/admin-users/admin-users.page').then(m => m.AdminUsersPage)
+        path: 'notice-list',
+        loadComponent: () => import('./admin/notice-list/notice-list.page').then(m => m.NoticeListPage)
       },
       {
         path: 'settings',
         loadComponent: () => import('./admin/admin-settings/admin-settings.page').then(m => m.AdminSettingsPage)
+      },
+      {
+        path: 'payment-tracking',
+        loadComponent: () => import('./admin/payment-tracking/payment-tracking.page').then(m => m.PaymentTrackingPage)
+      },
+      {
+        path: 'offline-payment',
+        loadComponent: () => import('./admin/offline-payment/offline-payment.page').then(m => m.OfflinePaymentPage)
+      },
+      {
+        path: 'plot-list',
+        loadComponent: () => import('./admin/plot-list/plot-list.page').then(m => m.PlotListPage)
+      },
+      {
+        path: 'plot-detail/:plotNo',
+        loadComponent: () => import('./admin/plot-detail/plot-detail.page').then(m => m.PlotDetailPage)
+      },
+      {
+        path: 'owner-list',
+        loadComponent: () => import('./admin/owner-list/owner-list.page').then(m => m.OwnerListPage)
+      },
+      {
+        path: 'owner-detail/:ownerIndex',
+        loadComponent: () => import('./admin/owner-detail/owner-detail.page').then(m => m.OwnerDetailPage)
+      },
+      {
+        path: 'guard-list',
+        loadComponent: () => import('./admin/guard-list/guard-list.page').then(m => m.GuardListPage)
+      },
+      {
+        path: 'tenant-list',
+        loadComponent: () => import('./admin/tenant-list/tenant-list.page').then(m => m.TenantListPage)
+      },
+      {
+        path: 'users',
+        loadComponent: () => import('./admin/admin-users/admin-users.page').then(m => m.AdminUsersPage)
       },
       {
         path: 'profile',

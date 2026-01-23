@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonContent, IonSegment, IonSegmentButton, IonLabel, IonItem, IonSelect, IonSelectOption, IonCard, IonCardContent, IonButton, IonDatetime, IonDatetimeButton, IonModal, IonIcon } from '@ionic/angular/standalone';
+import { IonContent, IonLabel, IonItem, IonSelect, IonSelectOption, IonCard, IonCardContent, IonButton, IonDatetime, IonDatetimeButton, IonModal, IonIcon } from '@ionic/angular/standalone';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { addIcons } from 'ionicons';
@@ -11,10 +11,9 @@ import { HeaderComponent } from '../../shared/header/header.component';
   templateUrl: './security-logs.page.html',
   styleUrls: ['./security-logs.page.scss'],
   standalone: true,
-  imports: [IonContent, IonSegment, IonSegmentButton, IonLabel, IonItem, IonSelect, IonSelectOption, IonCard, IonCardContent, IonButton, IonDatetime, IonDatetimeButton, IonModal, IonIcon, FormsModule, CommonModule, HeaderComponent]
+  imports: [IonContent, IonLabel, IonItem, IonSelect, IonSelectOption, IonCard, IonCardContent, IonButton, IonDatetime, IonDatetimeButton, IonModal, IonIcon, FormsModule, CommonModule, HeaderComponent]
 })
 export class LogsPage {
-  selectedSegment = 'today';
   filterDate = 'all';
   filterType = 'all';
   selectedDate: string = new Date().toISOString();

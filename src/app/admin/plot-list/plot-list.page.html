@@ -1,0 +1,76 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Plot List</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="addPlot()">
+        <ion-icon name="add-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="filterPlots()" placeholder="Search plots or owners..."></ion-searchbar>
+    
+    <div class="list">
+      <ion-card *ngFor="let plot of displayedPlots; let i = index" class="plot-card">
+        <ion-card-content>
+          <div class="plot-header">
+            <div class="plot-info" (click)="goToPlotDetail(plot.plotNo)">
+              <h3>{{plot.plotNo}}</h3>
+              <p>{{plot.owner}}</p>
+            </div>
+            <div class="plot-actions">
+              <ion-button fill="clear" size="small" (click)="editPlot(i, $event)">
+                <ion-icon name="create-outline"></ion-icon>
+              </ion-button>
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+    
+    <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+      <ion-infinite-scroll-content loadingText="Loading more plots..."></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+  
+  <ion-modal [isOpen]="isModalOpen" (didDismiss)="closeModal()">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>{{isEditMode ? 'Edit' : 'Add'}} Plot</ion-title>
+          <ion-buttons slot="end">
+            <ion-button fill="clear" (click)="closeModal()">
+              <ion-icon name="close-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      
+      <ion-content>
+        <div class="form-container">
+          <ion-item>
+            <ion-label position="stacked">Plot Number</ion-label>
+            <ion-input [(ngModel)]="plotForm.plotNo" placeholder="Enter plot number"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label position="stacked">Owner Name</ion-label>
+            <ion-input [(ngModel)]="plotForm.owner" placeholder="Enter owner name"></ion-input>
+          </ion-item>
+          
+          <div class="form-buttons">
+            <ion-button expand="block" (click)="savePlot()">{{isEditMode ? 'Update' : 'Add'}} Plot</ion-button>
+          </div>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>

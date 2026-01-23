@@ -1,0 +1,63 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Payment Tracking</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <ion-item>
+      <ion-label position="stacked">Select Month</ion-label>
+      <ion-select [(ngModel)]="selectedMonth" placeholder="Choose month">
+        <ion-select-option *ngFor="let month of monthOptions" [value]="month.value">
+          {{month.label}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <div class="stats-cards">
+      <ion-card class="stat-card paid">
+        <ion-card-content>
+          <div class="stat-number">{{paidCount}}</div>
+          <div class="stat-label">Paid</div>
+        </ion-card-content>
+      </ion-card>
+      <ion-card class="stat-card unpaid">
+        <ion-card-content>
+          <div class="stat-number">{{unpaidCount}}</div>
+          <div class="stat-label">Unpaid</div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <ion-segment [(ngModel)]="statusFilter">
+      <ion-segment-button value="all">
+        <ion-label>All</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="paid">
+        <ion-label>Paid</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="unpaid">
+        <ion-label>Unpaid</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <div class="list">
+      <ion-item *ngFor="let payment of filteredPayments">
+        <ion-label>
+          <h3>{{payment.plotNo}}</h3>
+          <p>{{payment.ownerName}}</p>
+          <p *ngIf="payment.status === 'paid'">₹{{payment.amount}} - {{payment.paidDate}}</p>
+        </ion-label>
+        <ion-chip [color]="payment.status === 'paid' ? 'success' : 'danger'" slot="end">
+          {{payment.status | titlecase}}
+        </ion-chip>
+      </ion-item>
+    </div>
+  </div>
+</ion-content>

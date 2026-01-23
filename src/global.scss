@@ -36,3 +36,17 @@
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
 @import "./theme/design-tokens.scss";
+
+// Global background color for all pages
+ion-content {
+  --background: #EBF4DD;
+}
+
+// Active tab styling with green top border
+ion-tab-button.tab-selected {
+  border-top: 1px solid #4CAF50 !important;
+}
+
+ion-tab-bar {
+  --border: 1px solid #ddd;
+}

@@ -1,0 +1,68 @@
+.container {
+  padding: 16px;
+}
+
+.owner-card {
+  margin-bottom: 8px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  background: #ffffff;
+}
+
+.owner-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.owner-info {
+  flex: 1;
+  cursor: pointer;
+}
+
+.owner-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 8px;
+  margin-top: 8px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.owner-detail {
+  display: flex;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.owner-detail:last-of-type {
+  border-bottom: none;
+}
+
+.detail-icon {
+  color: var(--ion-color-primary);
+  font-size: 16px;
+  margin-right: 12px;
+  min-width: 16px;
+}
+
+.detail-value {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+  flex: 1;
+}
+
+.arrow-icon {
+  color: #999;
+  font-size: 1.2rem;
+  margin-left: 12px;
+}
+
+.form-container {
+  padding: 16px;
+}
+
+.form-buttons {
+  margin-top: 24px;
+}

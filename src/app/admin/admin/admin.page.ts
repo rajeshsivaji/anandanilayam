@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonContent, IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/angular/standalone';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { addIcons } from 'ionicons';
-import { gridOutline, peopleOutline, settingsOutline, personOutline } from 'ionicons/icons';
+import { gridOutline, peopleOutline, personOutline, constructOutline, settingsOutline, cardOutline, documentTextOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-admin',
@@ -13,6 +13,6 @@ import { gridOutline, peopleOutline, settingsOutline, personOutline } from 'ioni
 })
 export class AdminPage {
   constructor() {
-    addIcons({ gridOutline, peopleOutline, settingsOutline, personOutline });
+    addIcons({ gridOutline, peopleOutline, personOutline, constructOutline, settingsOutline, cardOutline, documentTextOutline });
   }
 }

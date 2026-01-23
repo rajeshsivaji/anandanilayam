@@ -1,0 +1,58 @@
+.container {
+  padding: 16px;
+}
+
+.tenant-card {
+  margin-bottom: 12px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background: #ffffff;
+}
+
+.tenant-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.tenant-info {
+  flex: 1;
+}
+
+.tenant-detail {
+  display: flex;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.tenant-detail:last-of-type {
+  border-bottom: none;
+}
+
+.detail-icon {
+  color: var(--ion-color-primary);
+  font-size: 16px;
+  margin-right: 12px;
+  min-width: 16px;
+}
+
+.detail-value {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+  flex: 1;
+}
+
+.tenant-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-container {
+  padding: 16px;
+}
+
+.form-buttons {
+  margin-top: 24px;
+}
